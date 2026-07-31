@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { carro } from './carro';
+import { Carro } from './carro';
 
 @Component({
   selector: 'app-veiculo',
@@ -11,9 +11,9 @@ import { carro } from './carro';
 
 export class Veiculo {
   id_produto: number = 0
-  descricao_Veiculo: string = ''
+  descricao_veiculo: string = ''
   valor_servico: number = 0.0
-  listaItens : carro[] = []
+  listaItens : Carro[] = []
 
 
   addItem(){
@@ -22,14 +22,14 @@ export class Veiculo {
     
     // let item = new Item(this.listaItens.length + 1, this.descricao_produto, this.valor_unitario)
 
-    let carro  = new carro()
+    let carro  = new Carro()
     carro.idProduto = this.listaItens.length + 1
-    carro.descricaoCarro = this.descricao_Veiculo
-    carro.valorUnitario = this.valor_servico
+    carro.descricaoCarro = this.descricao_veiculo
+    carro.valorServico = this.valor_servico
 
     this.listaItens.push(carro)
 
-    this.descricao_Veiculo=''
+    this.descricao_veiculo=''
     this.valor_servico=0.0
     
   }

@@ -1,1 +1,32 @@
-<p>veiculo works!</p>
+<div id="div-form">
+    <h1>Lista de Veiculos</h1>
+    <form  id="form">
+      <div id="inputs">
+        <label for="Descrição do produto">Descrição</label>
+        <input type="text" name="descriçao" id="descricao" [(ngModel)] = "descricao_veiculo" placeholder="descrição">
+
+        <label for="valor">Valor</label>
+        <input type="number" name="valor" id="valor" [(ngModel)] = "valor_servico" placeholder="valor">
+      </div>
+
+        <div class="btn">
+            <button type="button" id="btnAdd" (click)="addItem()">Adicionar</button>
+        <button type="button" id="btnlimpar" (click)="limparForm()">Limpar</button>
+        </div>
+    </form>
+    <div id="div-list">
+        @for(elem of listaItens; track elem.idProduto){
+          <div class="div-item" [class.selecionado] = "elem.statusSelecionado">
+            <input id="inp" type="checkbox" 
+            [(ngModel)] = "elem.statusSelecionado" >&nbsp;&nbsp;
+
+           <span id="texto">
+            {{elem.idProduto}} - {{elem.descricaoCarro}} - {{elem.valorServico}}
+           </span>
+           
+          </div>
+        }@empty{
+          <div class="div-item">Nenhum produto na lista</div>
+        }
+    </div>
+</div>

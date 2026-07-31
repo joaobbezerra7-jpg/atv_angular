@@ -1,7 +1,7 @@
-export class carro{
+export class Carro{
     idProduto?: number 
-    descricaoProduto?: string
-    valorUnitario?: number
+    descricaoCarro?: string
+    valorServico?: number
     statusSelecionado: boolean = false
 
     
